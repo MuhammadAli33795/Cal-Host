@@ -9,7 +9,10 @@ let errorMessage = "'Error' Press C to reset";
 //To detect screen change
 let viewPortWidth = window.innerWidth;
 console.log('View Port Width = ' + viewPortWidth);
-inputSize();
+window.addEventListener('load', () => {
+    inputSize();
+});
+
 
 //Audio Keys
 let buttonSound = new Audio('./audio/ButtonPopSound.mp3');
