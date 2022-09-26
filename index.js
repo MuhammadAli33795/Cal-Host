@@ -6,20 +6,23 @@ console.log('Node List = ' + button);
 let count = 0;
 let errorMessage = "'Error' Press C to reset";
 
+let viewPortWidth = window.matchMedia("(max-width: 639px)");
+let viewPortWidthLg = window.matchMedia("(max-width: 1023px)");
+console.log('View Port Width = ' + window.innerWidth);
+window.addEventListener('load', inputSize());
+/*
 //To detect screen change
 let viewPortWidth = window.innerWidth;
 console.log('View Port Width = ' + viewPortWidth);
 window.addEventListener('load', () => {
     inputSize();
 });
-
+*/
 
 //Audio Keys
 let buttonSound = new Audio('./audio/ButtonPopSound.mp3');
 let resultSound = new Audio('./audio/resultSound.mp3');
 let errorSound = new Audio('./audio/errorSound.mp3');
-
-
 
 /*Feature Disabled
 //to add sound on hover
@@ -114,6 +117,29 @@ for (let i = 0; i < button.length; i++) {
         //console.log(count);
     }
     }
+    //Using Media.match query
+    function inputSize() {
+            if (viewPortWidth.matches) {//Equal to or less then 639px
+                console.log('View port width <= 639');
+                displayI.size = 17;
+                display2.size = 21;
+            } else {
+                console.log('View port width >= 639');
+                displayI.size = 21;
+                display2.size = 29;
+            }
+        if (viewPortWidthLg.matches) {//Equal to or less then 1023px
+            console.log('View port width <= 1023');    
+        
+        } else {
+            console.log('View port width >= 1023');
+            displayI.size = 23;
+            display2.size = 29;
+        }
+        console.log(displayI.size);
+        console.log(display2.size);
+    }
+    /*
     //Changes Output box size according to port
     function inputSize() {
         if (viewPortWidth >= 640 && viewPortWidth <= 1024) {
@@ -125,6 +151,7 @@ for (let i = 0; i < button.length; i++) {
             
         } else {}
     }
+    */
     //Button sound Exclusion
     function buttonExclusion(flag) {
         switch (button[flag].innerHTML) {
