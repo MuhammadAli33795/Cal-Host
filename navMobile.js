@@ -10,8 +10,8 @@ menue.addEventListener('click', () => {
 });
 
 //Bg Sound
-let bgSound1 = new Audio('/audio/bgSound1.mp3');
-let bgSound2 = new Audio('/audio/bgSound2.mp3');
+let bgSound1 = new Audio('./audio/bgSound1.mp3');
+let bgSound2 = new Audio('./audio/bgSound2.mp3');
 let mute = 1;
 
 //Mobile Nav Functionality

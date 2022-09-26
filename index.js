@@ -12,9 +12,9 @@ console.log('View Port Width = ' + viewPortWidth);
 inputSize();
 
 //Audio Keys
-let buttonSound = new Audio('/audio/ButtonPopSound.mp3');
-let resultSound = new Audio('/audio/resultSound.mp3');
-let errorSound = new Audio('/audio/errorSound.mp3');
+let buttonSound = new Audio('./audio/ButtonPopSound.mp3');
+let resultSound = new Audio('./audio/resultSound.mp3');
+let errorSound = new Audio('./audio/errorSound.mp3');
 
 
 
