@@ -9,7 +9,7 @@ let errorMessage = "'Error' Press C to reset";
 let viewPortWidth = window.matchMedia("(max-width: 639px)");
 let viewPortWidthLg = window.matchMedia("(max-width: 1023px)");
 console.log('View Port Width = ' + window.innerWidth);
-window.addEventListener('load', inputSize());
+window.addEventListener('change', inputSize());
 /*
 //To detect screen change
 let viewPortWidth = window.innerWidth;
