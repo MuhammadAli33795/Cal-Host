@@ -6,10 +6,12 @@ console.log('Node List = ' + button);
 let count = 0;
 let errorMessage = "'Error' Press C to reset";
 
+/*//Input resizing with window.match at media querries
 let viewPortWidth = window.matchMedia("(max-width: 639px)");
 let viewPortWidthLg = window.matchMedia("(max-width: 1023px)");
 console.log('View Port Width = ' + window.innerWidth);
 window.addEventListener('change', inputSize());
+*/
 /*
 //To detect screen change
 let viewPortWidth = window.innerWidth;
@@ -18,6 +20,9 @@ window.addEventListener('load', () => {
     inputSize();
 });
 */
+//To detect screen change
+inputSize(); // Changes size of input box Output Screen
+
 
 //Audio Keys
 let buttonSound = new Audio('./audio/ButtonPopSound.mp3');
@@ -117,7 +122,8 @@ for (let i = 0; i < button.length; i++) {
         //console.log(count);
     }
     }
-    //Using Media.match query
+
+    /*//Using Media.match query resize input 
     function inputSize() {
             if (viewPortWidth.matches) {//Equal to or less then 639px
                 console.log('View port width <= 639');
@@ -139,8 +145,8 @@ for (let i = 0; i < button.length; i++) {
         console.log(displayI.size);
         console.log(display2.size);
     }
-    /*
-    //Changes Output box size according to port
+    */
+    /*//Changes Output box size according to port
     function inputSize() {
         if (viewPortWidth >= 640 && viewPortWidth <= 1024) {
             displayI.size = 21;
@@ -152,6 +158,21 @@ for (let i = 0; i < button.length; i++) {
         } else {}
     }
     */
+    
+    //Changes Output box size according to port
+    function inputSize() {
+        let tableWidth = document.getElementById('tableId').clientWidth; //Table Width
+        console.log(tableWidth);
+        
+        if (tableWidth == 388) {
+            displayI.size = 21;
+            display2.size = 29;
+        } else if (tableWidth == 484) {
+            displayI.size = 23;
+            display2.size = 29;
+        }
+    };
+    
     //Button sound Exclusion
     function buttonExclusion(flag) {
         switch (button[flag].innerHTML) {
